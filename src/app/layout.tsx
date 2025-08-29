@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Orbitron, VT323, Press_Start_2P } from "next/font/google";
+import { Geist, Geist_Mono, Orbitron, VT323, Press_Start_2P, Pixelify_Sans } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,6 +29,12 @@ const pixelFont = Press_Start_2P({
   subsets: ["latin"],
 });
 
+const pixelifySans = Pixelify_Sans({
+  variable: "--font-pixelify-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "ABHINAV.DEV - Retro Portfolio",
   description: "A cyberpunk-style developer portfolio with neon effects",
@@ -42,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${vt323.variable} ${pixelFont.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${vt323.variable} ${pixelFont.variable} ${pixelifySans.variable} antialiased`}
       >
         {children}
       </body>

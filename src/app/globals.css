@@ -22,5 +22,9 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-pixelify-sans), 'Courier New', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.pixelify-font {
+  font-family: var(--font-pixelify-sans), 'Courier New', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
 }

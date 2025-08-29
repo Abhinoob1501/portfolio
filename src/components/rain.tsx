@@ -85,7 +85,7 @@ export default function RainEffect({
     if (withThunder) {
       function triggerThunder() {
         const thunderChance = Math.random();
-        if (thunderChance < 0.02 && c) { // 2% chance every frame
+        if (thunderChance < 0.1 && c) { // 2% chance every frame
           // Flash effect
           c.style.background = "rgba(255, 255, 255, 0.8)";
           setTimeout(() => {
