@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useId, useMemo, useRef, useState } from "react";
+import React, { useEffect, useId, useMemo, useState } from "react";
 
 interface FlickerTextProps {
   text: string;

@@ -4,19 +4,12 @@ import FlickerText from "@/components/glitch";
 import Flicker from "@/components/flicker";
 import Card from "@/components/card";
 import DiscordStatus from "@/components/discordStatus";
-import SimpleDiscordStatus from "@/components/simpleDiscordStatus";
 import SpotifyStatus from "@/components/spotifyStatus";
 import FastMarquee from "@/components/fastMarquee";
-import { nameContent } from "@/components/SVG/nameData";
 import { abhContent } from "@/components/SVG/abhData";
 import { iContent } from "@/components/SVG/iData";
 import { navContent } from "@/components/SVG/navData";
-import  ElectricWires  from "@/components/wire";
 import NeonTetris from "@/components/tetris";
-
-interface UserId {
-  Discord_user_id: string;
-}
 
 export default function Home() {
   return (

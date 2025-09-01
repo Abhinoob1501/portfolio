@@ -22,8 +22,6 @@ export default function RainEffect({
   withThunder = false,
 }: RainEffectProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const rainAudioRef = useRef<HTMLAudioElement>(null);
-  const thunderAudioRef = useRef<HTMLAudioElement>(null);
   const animationRef = useRef<number | null>(null);
   const rainDrops = useRef<RainDrop[]>([]);
 
@@ -40,11 +38,11 @@ export default function RainEffect({
     c.height = window.innerHeight;
 
     let rainStopped = false;
-    let defaultLength = 50;
-    let defaultSpeed = 27;
-    let angle = (90 * Math.PI) / 180;
-    let angleSin = Math.sin(angle);
-    let angleCos = Math.cos(angle);
+    const defaultLength = 50;
+    const defaultSpeed = 27;
+    const angle = (90 * Math.PI) / 180;
+    const angleSin = Math.sin(angle);
+    const angleCos = Math.cos(angle);
 
     function newDrop() {
       if (rainDrops.current.length > 350 || !c) return;

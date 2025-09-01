@@ -58,8 +58,6 @@ export default function ElectricWire({
     
     // If custom from/to coordinates are provided
     if (from && to) {
-      const dx = to.x - from.x;
-      const dy = to.y - from.y;
       return `M${from.x},${from.y} L${to.x},${to.y}`;
     }
 

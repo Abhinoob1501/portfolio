@@ -1,7 +1,6 @@
 import Flicker from "@/components/flicker";
 import VerticalRain from "@/components/verticalRain";
-import Glitch from "@/components/glitch";
-import NeonLight from "@/components/neonLight";
+import Link from "next/link";
 
 export default function Resume() {
   return (
@@ -104,7 +103,7 @@ export default function Resume() {
 </svg>
           </a>
         </div>
-        <div className="text-center"><a href="/" className="z-20"><Flicker text="go back" fontSize={30} /></a></div>
+        <div className="text-center"><Link href="/" className="z-20"><Flicker text="go back" fontSize={30} /></Link></div>
 
 
       </div>
