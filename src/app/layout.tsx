@@ -11,7 +11,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "ABHINAV.DEV - Retro Portfolio",
-  description: "A cyberpunk-style developer portfolio with neon effects",
+  description: "Portfolio of Abhinav",
 };
 
 export default function RootLayout({
