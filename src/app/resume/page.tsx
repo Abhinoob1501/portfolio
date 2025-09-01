@@ -1,4 +1,7 @@
+import Flicker from "@/components/flicker";
 import VerticalRain from "@/components/verticalRain";
+import Glitch from "@/components/glitch";
+import NeonLight from "@/components/neonLight";
 
 export default function Resume() {
   return (
@@ -14,13 +17,96 @@ export default function Resume() {
         ]} 
       />
       
-      {/* SVG Background */}
-      <div className="w-3/10 p-5 relative z-20">
-        <h1 className="text-3xl font-bold ">Resume</h1>
-        <p className="text-lg ">Download my resume:</p>
-        <a href="/path/to/resume.pdf" className="text-cyan-400 hover:text-cyan-300 underline">
-          ✩ Resume PDF
-        </a>
+      <div className="w-3/10  flex-col space-y-4 p-5 relative z-20">
+
+        <div className="flex justify-center mt-0 mb-0"><Flicker text="RESUME" fontSize={50} /></div>
+        <div className="flex justify-center mt-0 mb-0"><Flicker text="🢗" fontSize={70} /></div>
+        <div className="flex justify-center ">
+          <a href="/abhinav_resume.pdf">
+            <svg xmlns="http://www.w3.org/2000/svg" className="hover:fill-cyan-500" viewBox="0 0 16 18" width="150" height="180" shapeRendering="crispEdges" role="img" aria-label="Pixel page">
+  
+  <rect x="3" y="1" width="1" height="1" fill="white"/>
+  <rect x="4" y="1" width="1" height="1" fill="white"/>
+  <rect x="5" y="1" width="1" height="1" fill="white"/>
+  <rect x="6" y="1" width="1" height="1" fill="white"/>
+  <rect x="7" y="1" width="1" height="1" fill="white"/>
+  <rect x="8" y="1" width="1" height="1" fill="white"/>
+  <rect x="9" y="1" width="1" height="1" fill="white"/>
+  <rect x="10" y="1" width="1" height="1" fill="white"/>
+  <rect x="11" y="1" width="1" height="1" fill="white"/>
+  <rect x="11" y="1" width="1" height="1" fill="white"/>
+  <rect x="3" y="2" width="1" height="1" fill="white"/>
+  <rect x="10" y="2" width="1" height="1" fill="white"/>
+  <rect x="11" y="2" width="1" height="1" fill="white"/>
+  <rect x="3" y="3" width="1" height="1" fill="white"/>
+  <rect x="11" y="3" width="1" height="1" fill="white"/>
+  <rect x="3" y="4" width="1" height="1" fill="white"/>
+  <rect x="11" y="4" width="1" height="1" fill="white"/>
+  <rect x="3" y="5" width="1" height="1" fill="white"/>
+  <rect x="11" y="5" width="1" height="1" fill="white"/>
+  <rect x="3" y="6" width="1" height="1" fill="white"/>
+  <rect x="11" y="6" width="1" height="1" fill="white"/>
+  <rect x="3" y="7" width="1" height="1" fill="white"/>
+  <rect x="11" y="7" width="1" height="1" fill="white"/>
+  <rect x="3" y="8" width="1" height="1" fill="white"/>
+  <rect x="11" y="8" width="1" height="1" fill="white"/>
+  <rect x="3" y="9" width="1" height="1" fill="white"/>
+  <rect x="11" y="9" width="1" height="1" fill="white"/>
+  <rect x="3" y="10" width="1" height="1" fill="white"/>
+  <rect x="11" y="10" width="1" height="1" fill="white"/>
+  <rect x="3" y="11" width="1" height="1" fill="white"/>
+  <rect x="11" y="11" width="1" height="1" fill="white"/>
+  <rect x="3" y="12" width="1" height="1" fill="white"/>
+  <rect x="11" y="12" width="1" height="1" fill="white"/>
+  <rect x="3" y="13" width="1" height="1" fill="white"/>
+  <rect x="11" y="13" width="1" height="1" fill="white"/>
+  <rect x="3" y="14" width="1" height="1" fill="white"/>
+  <rect x="4" y="14" width="1" height="1" fill="white"/>
+  <rect x="5" y="14" width="1" height="1" fill="white"/>
+  <rect x="6" y="14" width="1" height="1" fill="white"/>
+  <rect x="7" y="14" width="1" height="1" fill="white"/>
+  <rect x="8" y="14" width="1" height="1" fill="white"/>
+  <rect x="9" y="14" width="1" height="1" fill="white"/>
+  <rect x="10" y="14" width="1" height="1" fill="white"/>
+  <rect x="11" y="14" width="1" height="1" fill="white"/>
+
+  <rect x="9" y="1" width="1" height="1" fill="white"/>
+  <rect x="11" y="1" width="1" height="1" fill="white"/>
+  
+
+  <rect x="4" y="3" width="1" height="1" fill="white"/>
+  <rect x="5" y="3" width="1" height="1" fill="white"/>
+  <rect x="6" y="3" width="1" height="1" fill="white"/>
+  <rect x="7" y="3" width="1" height="1" fill="white"/>
+  <rect x="8" y="3" width="1" height="1" fill="white"/>
+  
+  <rect x="4" y="5" width="1" height="1" fill="white"/>
+  <rect x="5" y="5" width="1" height="1" fill="white"/>
+  <rect x="6" y="5" width="1" height="1" fill="white"/>
+  <rect x="7" y="5" width="1" height="1" fill="white"/>
+  <rect x="8" y="5" width="1" height="1" fill="white"/>
+  <rect x="9" y="5" width="1" height="1" fill="white"/>
+  
+  <rect x="4" y="7" width="1" height="1" fill="white"/>
+  <rect x="5" y="7" width="1" height="1" fill="white"/>
+  <rect x="6" y="7" width="1" height="1" fill="white"/>
+  <rect x="7" y="7" width="1" height="1" fill="white"/>
+  
+  <rect x="4" y="9" width="1" height="1" fill="white"/>
+  <rect x="5" y="9" width="1" height="1" fill="white"/>
+  <rect x="6" y="9" width="1" height="1" fill="white"/>
+  <rect x="7" y="9" width="1" height="1" fill="white"/>
+  <rect x="8" y="9" width="1" height="1" fill="white"/>
+  
+  <rect x="4" y="11" width="1" height="1" fill="white"/>
+  <rect x="5" y="11" width="1" height="1" fill="white"/>
+  <rect x="6" y="11" width="1" height="1" fill="white"/>
+</svg>
+          </a>
+        </div>
+        <div className="text-center"><a href="/" className="z-20"><Flicker text="go back" fontSize={30} /></a></div>
+
+
       </div>
       <div
         className="w-7/10 inset-0 opacity-100 relative z-10"
@@ -33,6 +119,8 @@ export default function Resume() {
     
         }}
       />
+        
     </main>
   );
 }
+

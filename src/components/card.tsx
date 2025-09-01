@@ -34,7 +34,7 @@ export default function Card({
   const sizeClasses = {
     sm: 'p-3 text-sm',
     md: 'p-4',
-    lg: 'p-6 text-lg'
+    lg: 'p-6 text-lg',
   };
 
   // Flicker effect state

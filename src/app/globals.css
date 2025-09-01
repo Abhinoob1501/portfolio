@@ -28,3 +28,58 @@ body {
 .pixelify-font {
   font-family: var(--font-pixelify-sans), 'Courier New', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
 }
+
+/* Marquee animations */
+@keyframes marquee-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(calc(-1 * var(--content-width)), 0, 0);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translate3d(calc(-1 * var(--content-width)), 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-left linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-right {
+  animation: marquee-right linear infinite;
+  will-change: transform;
+}
+
+.marquee-wrapper {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  flex-shrink: 0;
+}
+
+/* Scanline overlay for CRT effect */
+.scanline-overlay {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.3) 3px
+  );
+  animation: scan-move 4s linear infinite;
+}
+
+@keyframes scan-move {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}

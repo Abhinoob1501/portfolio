@@ -5,9 +5,11 @@ import React, { useEffect, useId, useMemo, useRef, useState } from "react";
 interface FlickerTextProps {
   text: string;
   fontSize?: number; // px
+  size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl"; // predefined sizes
   color?: string; // base text color
   flickerSpeed?: number; // ms between state changes
   jitterMax?: number; // px
+  fontFamily?: string; // custom font family
 }
 
 /**
@@ -21,10 +23,12 @@ interface FlickerTextProps {
  */
 export default function Flicker({
   text,
-  fontSize = 64,
+  fontSize,
+  size = "md",
   color = "#00ff99",
   flickerSpeed = 120,
   jitterMax = 2,
+  fontFamily = "var(--font-pixelify-sans), 'Press Start 2P', monospace",
 }: FlickerTextProps) {
   const [dim, setDim] = useState(false);
   const [jitter, setJitter] = useState(0);
@@ -36,6 +40,20 @@ export default function Flicker({
 
   // derive a soft glow color from the base color
   const glow = useMemo(() => color, [color]);
+
+  // Size mapping
+  const sizeMap = {
+    xs: 12,
+    sm: 16,
+    md: 24,
+    lg: 32,
+    xl: 48,
+    "2xl": 64,
+    "3xl": 80,
+  };
+
+  // Use fontSize prop if provided, otherwise use size mapping
+  const computedFontSize = fontSize || sizeMap[size];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -64,8 +82,9 @@ export default function Flicker({
   const containerStyle: React.CSSProperties = {
     position: "relative",
     display: "inline-block",
-    fontFamily: "'Press Start 2P', monospace",
-    fontSize,
+    fontFamily,
+    fontSize: computedFontSize,
+    fontWeight: "bold",
     textTransform: "uppercase",
     color,
     transform: `translateX(${jitter}px)`,

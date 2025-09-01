@@ -5,19 +5,37 @@ import { useEffect, useState } from "react";
 interface FlickerTextProps {
   text: string;
   fontSize?: number;
+  size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl"; // predefined sizes
   color?: string;
   flickerSpeed?: number; // in ms
+  fontFamily?: string; // custom font family
 }
 
 export default function FlickerText({
   text,
-  fontSize = 48,
+  fontSize,
+  size = "md",
   color = "#00ff99",
   flickerSpeed = 120,
+  fontFamily = "var(--font-pixelify-sans), 'Press Start 2P', monospace",
 }: FlickerTextProps) {
   const [opacity, setOpacity] = useState(1);
   const [jitter, setJitter] = useState(0);
   const [glitch, setGlitch] = useState(false);
+
+  // Size mapping
+  const sizeMap = {
+    xs: 12,
+    sm: 16,
+    md: 24,
+    lg: 32,
+    xl: 48,
+    "2xl": 64,
+    "3xl": 80,
+  };
+
+  // Use fontSize prop if provided, otherwise use size mapping
+  const computedFontSize = fontSize || sizeMap[size];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,8 +61,9 @@ export default function FlickerText({
       style={{
         position: "relative",
         display: "inline-block",
-        fontFamily: "'Press Start 2P', monospace",
-        fontSize,
+        fontFamily,
+        fontSize: computedFontSize,
+        fontWeight: "bold",
         textTransform: "uppercase",
         opacity,
         transition:
