@@ -16,7 +16,7 @@ export default function Resume() {
         ]} 
       />
       
-      <div className="w-3/10  flex-col space-y-4 p-5 relative z-20">
+      <div className="w-full md:w-3/10 flex-col space-y-4 p-5 relative z-20">
 
         <div className="flex justify-center mt-0 mb-0"><Flicker text="RESUME" fontSize={50} /></div>
         <div className="flex justify-center mt-0 mb-0"><Flicker text="🢗" fontSize={70} /></div>
@@ -108,7 +108,7 @@ export default function Resume() {
 
       </div>
       <div
-        className="w-7/10 inset-0 opacity-100 relative z-10"
+        className="hidden md:block w-7/10 inset-0 opacity-100 relative z-10"
         style={{
           backgroundImage: 'url(/background.svg)',
           backgroundSize: 'cover',
