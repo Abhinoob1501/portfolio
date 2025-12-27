@@ -167,7 +167,7 @@ It’s where I stash projects, half-baked ideas, and random experiments. I like 
                   borderColor="border-purple-800"
                 />
                 <Card
-                  title="Research Work on AI Security"
+                  title="Research Work on Fairness in ML"
                   description="In Progress..."
                   icon="☾"
                   size="sm"
@@ -179,7 +179,7 @@ It’s where I stash projects, half-baked ideas, and random experiments. I like 
             <Flicker text="Monthly Updates" size="2xl" color="#00ff99" />
             <Card
               title=""
-              description="This month, I’m juggling building my portfolio and hunting for SIH team members—basically trying to clone myself before exams hit. Between coding sessions, late-night debugging, and endless coffee, I’m on the lookout for teammates who are curious, motivated, and up for a bit of chaos. If anyone’s feeling adventurous (and slightly crazy) enough to join the ride, you know where to find me! Let’s make something awesome before deadlines and exams catch up."
+              description="Just got done with my End Sems For 5th Semester! Excited for the winter break ahead. Looking forward to working on some cool projects and back to some DSA along with learning new stuff. Stay tuned for updates!"
               icon=""
 
               size="lg"
@@ -309,7 +309,7 @@ It’s where I stash projects, half-baked ideas, and random experiments. I like 
             <div className="border-t border-gray-700 pt-3">
               <div className="text-yellow-400 font-bold mb-2">💡 Current Focus</div>
               <div className="text-green-300">
-                My Research Paper on Security in Continual Adversarial Learning for AI models. <br />
+                My Research Paper on Fairness in Machine Learning. <br />
                 Always excited to collaborate on innovative projects!
               </div>
             </div>
