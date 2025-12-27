@@ -60,7 +60,7 @@ export default function NeonTetris(): React.ReactElement {
   const borderColor = "border-cyan-500";
   const glowColor = "#06b6d4";
   const glowStyle: React.CSSProperties = {
-    boxShadow: `0 0 8px ${glowColor}, 0 0 16px ${glowColor}, inset 0 0 6px ${glowColor}`,
+    boxShadow: `0 0 4px ${glowColor}, 0 0 8px ${glowColor}, inset 0 0 3px ${glowColor}`,
   };
 
   // className={`border-4 ${borderColor} ${sizeClasses[size]} rounded bg-gray-900/50 pixelify-font ${className}`
