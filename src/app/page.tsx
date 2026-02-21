@@ -1,3 +1,4 @@
+import Image from "next/image";
 import RainEffect from "@/components/rain";
 import NeonLight from "@/components/neonLight";
 import FlickerText from "@/components/glitch";
@@ -10,47 +11,56 @@ import { abhContent } from "@/components/SVG/abhData";
 import { iContent } from "@/components/SVG/iData";
 import { navContent } from "@/components/SVG/navData";
 import NeonTetris from "@/components/tetris";
+import {
+  SOCIAL_LINKS,
+  ABOUT_HIGHLIGHTS,
+  PROJECTS,
+  SHORT_TERM_GOALS,
+  LONG_TERM_GOALS,
+  MARQUEE_SKILLS_TOP,
+  MARQUEE_SKILLS_BOTTOM,
+  HASHTAGS,
+} from "@/constants/data";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-green-400 pixelify-font p-4 relative">
       <RainEffect withThunder />
-      
-      
 
-      
+
+
       {/* Top electric wires */}
-      
-      <div className="relative z-10 max-w-4xl mx-auto">
+
+      <div className="relative z-10 max-w-5xl mx-auto">
         {/* Header with Neon Light */}
-        <div className="text-center mb-8">
+        <header className="text-center mb-8">
           <br />
           <div className="flex items-end justify-center gap-2 mb-4">
-            <NeonLight 
+            <NeonLight
               svg={abhContent}
-              color="green" 
-              size="uniform-sm" 
+              color="green"
+              size="uniform-sm"
               flickering={false}
             />
-            <NeonLight 
+            <NeonLight
               svg={iContent}
-              color="green" 
-              size="uniform-sm" 
+              color="green"
+              size="uniform-sm"
               flickering={true}
             />
-            <NeonLight 
+            <NeonLight
               svg={navContent}
-              color="green" 
-              size="uniform-sm" 
+              color="green"
+              size="uniform-sm"
               flickering={false}
             />
           </div>
-        <br></br>
-        
-        <p className="text-cyan-400 text-lg animate-pulse">
+          <br></br>
+
+          <p className="text-cyan-400 text-lg animate-pulse">
             [ WELCOME ]
-        </p>
-        </div>
+          </p>
+        </header>
 
 
         <div className="flex flex-col lg:flex-row justify-center">
@@ -67,71 +77,58 @@ export default function Home() {
               flickering={true}
               className="mb-3"
             >
-            <div className="flex justify-around mb-2">
-              <div className="relative w-1/5 mr-3">
-                <img src="/pfp.svg" alt="ME" className="w-full h-auto mt-2 border-green-600 border-4 relative z-10" />
-                <div className="absolute inset-0 pointer-events-none z-20 rounded-lg overflow-hidden">
-                  <div className="w-full h-full bg-repeat-y scanline-overlay"></div>
+              <div className="flex justify-around mb-2">
+                <div className="relative w-1/5 mr-3">
+                  <Image
+                    src="/pfp.svg"
+                    alt="Abhinav's profile picture"
+                    width={200}
+                    height={200}
+                    className="w-full h-auto mt-2 border-green-600 border-4 relative z-10"
+                    priority
+                  />
+                  <div className="absolute inset-0 pointer-events-none z-20 rounded-lg overflow-hidden">
+                    <div className="w-full h-full bg-repeat-y scanline-overlay"></div>
+                  </div>
+                </div>
+                <div className="w-4/5">
+                  This is my personal corner of the internet. Welcome to my little site, started on September 1st, 2025. <br />
+                  It&apos;s where I stash projects, half-baked ideas, and random experiments. I like coding and making things just for fun. You can read more about me here!
                 </div>
               </div>
-              <div className="w-4/5"> 
-This is my personal corner of the internet. Welcome to my little site, started on September 1st, 2025. <br />
-It’s where I stash projects, half-baked ideas, and random experiments. I like coding and making things just for fun. You can read more about me here!
+              <br />
+              <div className="space-y-3 text-green-300 pixelify-font text-m tracking-wide leading-relaxed">
+                {ABOUT_HIGHLIGHTS.map((item, idx) => (
+                  <div key={idx} className={`flex items-center gap-2 ${item.color !== 'text-green-300' ? item.color : ''}`}>
+                    <span className="text-cyan-400 text-xl">•</span>
+                    <p>{item.text}</p>
+                  </div>
+                ))}
               </div>
-            </div>
-            <br />
-            <div className="space-y-3 text-green-300 pixelify-font text-m tracking-wide leading-relaxed">
-                <div className="flex items-center gap-2">
-                  <span className="text-cyan-400 text-xl">•</span>
-                  <p>Ex ML Intern at IIT-D specializing in fairness-aware models & NLP</p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-cyan-400 text-xl">•</span>
-                  <p>Built compilers, conversational AI, and full-stack applications</p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-cyan-400 text-xl">•</span>
-                  <p>Passionate about NLP, Generative AI, and system programming</p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-cyan-400 text-xl">•</span>
-                  <p>AI Team Lead — AWS Cloud Club</p>
-                </div>
-                <div className="flex items-center gap-2 text-purple-400">
-                  <span className="text-cyan-400 text-xl">•</span>
-                  <p>📍 Delhi, India • Open to remote opportunities</p>
-                </div>
-            </div>
             </Card>
-            <FastMarquee 
-              speed={80} 
+            <FastMarquee
+              speed={80}
               direction="left"
               className="text-cyan-400 text-lg  border-b border-green-800 pb-2"
               pauseOnHover={true}
               gradient={true}
               gradientColor="black"
             >
-              <span className="mx-8">🤖 PYTORCH 🤖</span>
-              <span className="mx-8">🧠 MACHINE LEARNING & NLP 🧠</span>
-              <span className="mx-8">⚡ GENERATIVE AI & LANGCHAIN ⚡</span>
-              <span className="mx-8">📊 FAIRNESS-AWARE MODELS 📊</span>
-              <span className="mx-8">🚀 BUILDING WITH NEXT.JS & RAG 🚀</span>
-
+              {MARQUEE_SKILLS_TOP.map((skill, idx) => (
+                <span key={idx} className="mx-8">{skill}</span>
+              ))}
             </FastMarquee>
-            <FastMarquee 
-              speed={60} 
+            <FastMarquee
+              speed={60}
               direction="right"
               className="text-green-400 text-lg  border-green-800 pt-2 pb-2"
               pauseOnHover={true}
               gradient={true}
               gradientColor="black"
             >
-              <span className="mx-8">⚡ NEXT.JS ⚡</span>
-              <span className="mx-8">💻 REACT & NODE.JS 💻</span>
-              <span className="mx-8">🛠️ EXPRESS & MONGODB 🛠️</span>
-              <span className="mx-8">🎨 TAILWIND CSS 🎨</span>
-              <span className="mx-8">🚀 FULL-STACK DEVELOPMENT 🚀</span>
-
+              {MARQUEE_SKILLS_BOTTOM.map((skill, idx) => (
+                <span key={idx} className="mx-8">{skill}</span>
+              ))}
             </FastMarquee>
             <Card
               title="Projects"
@@ -144,37 +141,19 @@ It’s where I stash projects, half-baked ideas, and random experiments. I like 
               flickering={false}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Card
-                  title="Compiler-BUBBLE"
-                  description="A light weight compiler to run my own language bubble"
-                  icon="☾"
-                  size="sm"
-                  borderColor="border-gray-800"
-                  flickering={true}
-                />
-                <Card
-                  title="GPTree"
-                  description="Chatgpt if we had a tree structure to map our minds while working"
-                  icon="☾"
-                  size="sm"
-                  borderColor="border-blue-900"
-                />
-                <Card
-                  title="AI context sharer chrome extension"
-                  description="Sharing AI context seamlessly across platforms"
-                  icon="☾"
-                  size="sm"
-                  borderColor="border-purple-800"
-                />
-                <Card
-                  title="Research Work on Fairness in ML"
-                  description="In Progress..."
-                  icon="☾"
-                  size="sm"
-                  borderColor="border-green-800"
-                />
+                {PROJECTS.map((project, idx) => (
+                  <Card
+                    key={idx}
+                    title={project.title}
+                    description={project.description}
+                    icon={project.icon}
+                    size="sm"
+                    borderColor={project.borderColor}
+                    flickering={project.flickering}
+                  />
+                ))}
               </div>
-              
+
             </Card>
             <Flicker text="Monthly Updates" size="2xl" color="#00ff99" />
             <Card
@@ -187,11 +166,11 @@ It’s where I stash projects, half-baked ideas, and random experiments. I like 
               className="mt-1"
               flickering={true}
             />
-            
+
           </div>
-          
+
           {/* Sidebar */}
-          <div className="lg:ml-1 w-full lg:w-1/4">
+          <aside className="lg:ml-1 w-full lg:w-1/4">
             <Card
               title="STARS"
               description=""
@@ -202,23 +181,22 @@ It’s where I stash projects, half-baked ideas, and random experiments. I like 
               className="mb-2 p-4"
               flickering={false}
             >
-            <div className="flex flex-col gap-4 pixelify-font">
-              <a href="https://github.com/Abhinoob1501" target="_blank" className="text-cyan-400 hover:text-cyan-300 underline tracking-wide">
-                ✩ GitHub
-              </a>
-              <a href="https://x.com/Abhi_noob_" target="_blank" className="text-cyan-400 hover:text-cyan-300 underline tracking-wide">
-                ✩ Twitter
-              </a>
-              <a href="https://discord.gg/GWu74z5M" target="_blank" className="text-cyan-400 hover:text-cyan-300 underline tracking-wide">
-                ✩ Discord
-              </a>
-              <a href="mailto:abhinavpratapsingh1501@gmail.com" className="text-cyan-400 hover:text-cyan-300 underline tracking-wide">
-                ✩ Email
-              </a>
-              <a href="/resume" className="text-cyan-400 hover:text-cyan-300 underline tracking-wide">
-                ✩ Resume
-              </a>
-            </div>
+              <nav aria-label="Social links">
+                <div className="flex flex-col gap-4 pixelify-font">
+                  {SOCIAL_LINKS.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target={link.isExternal ? "_blank" : undefined}
+                      rel={link.isExternal ? "noopener noreferrer" : undefined}
+                      aria-label={`Visit my ${link.label}`}
+                      className="text-cyan-400 hover:text-cyan-300 underline tracking-wide"
+                    >
+                      {link.icon} {link.label}
+                    </a>
+                  ))}
+                </div>
+              </nav>
             </Card>
             <Card
               title="MUSIC"
@@ -230,11 +208,11 @@ It’s where I stash projects, half-baked ideas, and random experiments. I like 
               className="mb-2 p-4"
               flickering={false}
             >
-            <div className="flex flex-col gap-4 pixelify-font">
-            <SpotifyStatus userId="653067764898070542" />
-            </div>
+              <div className="flex flex-col gap-4 pixelify-font">
+                <SpotifyStatus userId="653067764898070542" />
+              </div>
             </Card>
-            
+
             <Card
               title="STATUS"
               description=""
@@ -245,23 +223,26 @@ It’s where I stash projects, half-baked ideas, and random experiments. I like 
               className="mb-2 p-4"
               flickering={false}
             >
-            <div className="flex flex-col gap-4 pixelify-font">
-            <DiscordStatus userId="653067764898070542" />
-            </div>
+              <div className="flex flex-col gap-4 pixelify-font">
+                <DiscordStatus userId="653067764898070542" />
+              </div>
             </Card>
             <NeonTetris />
-            
+
             {/* Kelvin GIF at the bottom */}
             <div className="mt-4 flex justify-center">
-              <img 
-                src="/kelvin.gif" 
-                alt="Kelvin" 
+              <Image
+                src="/kelvin.gif"
+                alt="Kelvin animation"
+                width={400}
+                height={200}
                 className="w-full h-auto opacity-80 hover:opacity-100 transition-opacity duration-300 mt-10 ml-2"
                 style={{ maxHeight: '200px', objectFit: 'cover' }}
+                unoptimized
               />
             </div>
-            
-          </div>
+
+          </aside>
         </div>
 
         <FlickerText text="HELLO WORLD" size="3xl" />
@@ -274,78 +255,74 @@ It’s where I stash projects, half-baked ideas, and random experiments. I like 
 
 
         {/* Goals Section */}
-        <Card
-          title="Goals"
-          description=""
-          borderColor="border-purple-800"
-          titleColor="text-yellow-400"
-          size="lg"
-          icon=">"
-          className="mb-6"
-          flickering={true}
-        >
-          <div className="space-y-4 pixelify-font text-sm">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-3">
-                <div className="text-cyan-400 font-bold">🎯 Short Term</div>
-                <div className="space-y-1">
-                  <div className="text-green-300">• Land an Intern ship again (PLEASE HIRE ME)</div>
-                  <div className="text-green-300">• Make some cool projects</div>
-                  <div className="text-green-300">• Maintain my gpa</div>
-                  <div className="text-green-300">• Stay fit</div>
+        <section aria-label="Goals">
+          <Card
+            title="Goals"
+            description=""
+            borderColor="border-purple-800"
+            titleColor="text-yellow-400"
+            size="lg"
+            icon=">"
+            className="mb-6"
+            flickering={true}
+          >
+            <div className="space-y-4 pixelify-font text-sm">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-3">
+                  <div className="text-cyan-400 font-bold">🎯 Short Term</div>
+                  <div className="space-y-1">
+                    {SHORT_TERM_GOALS.map((goal, idx) => (
+                      <div key={idx} className="text-green-300">• {goal.text}</div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              
-              <div className="space-y-3">
-                <div className="text-purple-400 font-bold">🚀 Long Term </div>
-                <div className="space-y-1">
-                  <div className="text-purple-300">• Land dream tech job</div>
-                  <div className="text-purple-300">• be happy??</div>
 
+                <div className="space-y-3">
+                  <div className="text-purple-400 font-bold">🚀 Long Term </div>
+                  <div className="space-y-1">
+                    {LONG_TERM_GOALS.map((goal, idx) => (
+                      <div key={idx} className="text-purple-300">• {goal.text}</div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-            
-            <div className="border-t border-gray-700 pt-3">
-              <div className="text-yellow-400 font-bold mb-2">💡 Current Focus</div>
-              <div className="text-green-300">
-                My Research Paper on Fairness in Machine Learning. <br />
-                Always excited to collaborate on innovative projects!
+
+              <div className="border-t border-gray-700 pt-3">
+                <div className="text-yellow-400 font-bold mb-2">💡 Current Focus</div>
+                <div className="text-green-300">
+                  My Research Paper on Fairness in Machine Learning. <br />
+                  Always excited to collaborate on innovative projects!
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-3">
+                {HASHTAGS.map((tag, idx) => (
+                  <span
+                    key={idx}
+                    className={`px-2 py-1 ${tag.bgColor} border ${tag.borderColor} rounded ${tag.textColor} text-xs`}
+                  >
+                    {tag.tag}
+                  </span>
+                ))}
               </div>
             </div>
-            
-            <div className="flex flex-wrap gap-2 mt-3">
-              <span className="px-2 py-1 bg-cyan-800/30 border border-cyan-800 rounded text-cyan-300 text-xs">
-                #MachineLearning
-              </span>
-              <span className="px-2 py-1 bg-purple-800/30 border border-purple-800 rounded text-purple-300 text-xs">
-                #FullStack
-              </span>
-              <span className="px-2 py-1 bg-green-800/30 border border-green-800 rounded text-green-300 text-xs">
-                #OpenSource
-              </span>
-              <span className="px-2 py-1 bg-yellow-800/30 border border-yellow-800 rounded text-yellow-300 text-xs">
-                #Innovation
-              </span>
-            </div>
-          </div>
-        </Card>
+          </Card>
+        </section>
 
         {/* Status/Stats Card */}
 
 
         {/* Footer */}
-        <div className="text-center text-gray-500 text-sm">
+        <footer className="text-center text-gray-500 text-sm">
           <p>© 2025 ABHINOOBs - Made with ❤️ and lots of caffeine</p>
           <p className="mt-2">
-            <span className="text-green-400">{">"}</span> 
+            <span className="text-green-400">{">"}</span>
             <span className="animate-pulse">_</span>
           </p>
-        </div>
+        </footer>
       </div>
-      
+
       {/* Bottom electric wires */}
     </main>
   );
 }
-

@@ -17,9 +17,9 @@ interface CardProps {
   flickering?: boolean;
 }
 
-export default function Card({ 
-  title, 
-  description, 
+export default function Card({
+  title,
+  description,
   borderColor = 'border-green-600',
   titleColor = 'text-cyan-400',
   descriptionColor = 'text-green-300',
@@ -47,7 +47,7 @@ export default function Card({
     const flickerInterval = setInterval(() => {
       const shouldFlicker = Math.random() < 0.8; // 80% chance for occasional flickering
       setIsFlickering(shouldFlicker);
-      
+
       if (shouldFlicker) {
         // Random flicker intensity for more realistic effect
         setFlickerIntensity(0.1 + Math.random() * 0.2);
@@ -64,7 +64,7 @@ export default function Card({
   // Map border colors to glow colors
   const glowColorMap: { [key: string]: string } = {
     'border-green-600': '#10b981',
-    'border-green-500': '#10b981', 
+    'border-green-500': '#10b981',
     'border-cyan-500': '#06b6d4',
     'border-purple-500': '#8b5cf6',
     'border-yellow-500': '#eab308',
@@ -109,10 +109,10 @@ export default function Card({
   };
 
   const glowColor = getGlowColor(borderColor);
-  
+
   // Calculate current opacity based on flicker state
   const currentOpacity = flickering ? (isFlickering ? flickerIntensity : 1) : 1;
-  
+
   // Enhanced glow values for better flicker visibility
   const getGlowStyle = () => ({
     boxShadow: `
@@ -129,23 +129,27 @@ export default function Card({
   if (href) {
     return (
       <a href={href} className="block">
-        <div 
+        <article
           className={`border-4 ${borderColor} ${sizeClasses[size]} rounded bg-gray-900/50 pixelify-font ${className}`}
           style={getGlowStyle()}
         >
-          <h3 className={`${titleColor} font-bold mb-2 flex items-center gap-2 pixelify-font tracking-wider`}>
-            {icon && <span>{icon}</span>}
-            {title}
-          </h3>
-          <p className={`${descriptionColor} ${size === 'sm' ? 'text-xs' : size === 'lg' ? 'text-base' : 'text-sm'} pixelify-font leading-relaxed tracking-wide`}>
-            {description}
-          </p>
+          {title && (
+            <h3 className={`${titleColor} font-bold mb-2 flex items-center gap-2 pixelify-font tracking-wider`}>
+              {icon && <span>{icon}</span>}
+              {title}
+            </h3>
+          )}
+          {description && (
+            <p className={`${descriptionColor} ${size === 'sm' ? 'text-xs' : size === 'lg' ? 'text-base' : 'text-sm'} pixelify-font leading-relaxed tracking-wide`}>
+              {description}
+            </p>
+          )}
           {children && (
             <div className="mt-3 pixelify-font">
               {children}
             </div>
           )}
-        </div>
+        </article>
       </a>
     );
   }
@@ -153,44 +157,52 @@ export default function Card({
   if (onClick) {
     return (
       <button onClick={onClick} className="block w-full text-left">
-        <div 
+        <article
           className={`border-4 ${borderColor} ${sizeClasses[size]} rounded bg-gray-900/50 pixelify-font ${className}`}
           style={getGlowStyle()}
         >
-          <h3 className={`${titleColor} font-bold mb-2 flex items-center gap-2 pixelify-font tracking-wider`}>
-            {icon && <span>{icon}</span>}
-            {title}
-          </h3>
-          <p className={`${descriptionColor} ${size === 'sm' ? 'text-xs' : size === 'lg' ? 'text-base' : 'text-sm'} pixelify-font leading-relaxed tracking-wide`}>
-            {description}
-          </p>
+          {title && (
+            <h3 className={`${titleColor} font-bold mb-2 flex items-center gap-2 pixelify-font tracking-wider`}>
+              {icon && <span>{icon}</span>}
+              {title}
+            </h3>
+          )}
+          {description && (
+            <p className={`${descriptionColor} ${size === 'sm' ? 'text-xs' : size === 'lg' ? 'text-base' : 'text-sm'} pixelify-font leading-relaxed tracking-wide`}>
+              {description}
+            </p>
+          )}
           {children && (
             <div className="mt-3 pixelify-font">
               {children}
             </div>
           )}
-        </div>
+        </article>
       </button>
     );
   }
 
   return (
-    <div 
+    <article
       className={`border-4 ${borderColor} ${sizeClasses[size]} rounded bg-gray-900/50 pixelify-font ${className}`}
       style={getGlowStyle()}
     >
-      <h3 className={`${titleColor} font-bold mb-2 flex items-center gap-2 pixelify-font tracking-wider`}>
-        {icon && <span>{icon}</span>}
-        {title}
-      </h3>
-      <p className={`${descriptionColor} ${size === 'sm' ? 'text-xs' : size === 'lg' ? 'text-base' : 'text-sm'} pixelify-font leading-relaxed tracking-wide`}>
-        {description}
-      </p>
+      {title && (
+        <h3 className={`${titleColor} font-bold mb-2 flex items-center gap-2 pixelify-font tracking-wider`}>
+          {icon && <span>{icon}</span>}
+          {title}
+        </h3>
+      )}
+      {description && (
+        <p className={`${descriptionColor} ${size === 'sm' ? 'text-xs' : size === 'lg' ? 'text-base' : 'text-sm'} pixelify-font leading-relaxed tracking-wide`}>
+          {description}
+        </p>
+      )}
       {children && (
         <div className="mt-3 pixelify-font">
           {children}
         </div>
       )}
-    </div>
+    </article>
   );
 }
